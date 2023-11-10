@@ -1,0 +1,8 @@
+:root {
+	--color-violet: #403F85;
+}
+
+header {
+	background: var(--color-violet);
+	height: 115px;
+}
