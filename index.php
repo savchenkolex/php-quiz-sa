@@ -1,6 +1,6 @@
 <?php 
 require_once 'function.php';
-dd($_SERVER);
+// dd($_SERVER);
 
+require_once 'views/main.view.php';
 
-require_once 'views/main.php';

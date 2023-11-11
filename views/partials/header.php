@@ -12,6 +12,15 @@ $test = "some text for test";
 </head>
 <body>
 <header>
-	
-<?php echo $test ?>
+	<div class="container">
+		<div class="title-box">
+		
+		<h1><?= $title ?></h1>
+		</div>
+		<div class="nav-box">
+			<a href=<?= $nav["link"] ?> ><?= $nav["name"] ?></a>
+		</div>
+	</div>
 </header>
+
+<?= $current_url["path"] ?>
