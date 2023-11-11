@@ -1,8 +1,6 @@
 <?php 
-require_once 'partials/header.php';
+require_once 'function.php';
+dd($_SERVER);
 
 
-
-
-require_once 'partials/footer.php';
- ?>
+require_once 'views/main.php';
