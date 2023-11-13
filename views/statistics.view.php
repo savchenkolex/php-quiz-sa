@@ -12,12 +12,14 @@ require_once 'partials/header.php';
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<td>dfdsf</td>
-					<td>dfdsf</td>
-					<td>dfdsf</td>
-					<td>dfdsf</td>
-				</tr>
+				<?php foreach ($results as $result) : ?>
+					<tr>
+						<td><?= $result["name"]?></td>
+						<td><?= $result["total"]?></td>
+						<td><?= $result["correct"]?></td>
+						<td><?= $result["incorrect"]?></td>
+					</tr>
+				<?php endforeach; ?>
 			</tbody>
 		</table>
 	</div>
