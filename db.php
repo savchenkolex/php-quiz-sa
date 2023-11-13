@@ -10,18 +10,21 @@ class Database {
 			$this->db = new PDO($dsn, $db_user, $db_pass, [
 				PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
 			]);
+			$check_table = 'CREATE TABLE IF NOT EXISTS `quiz`.`results` ( `id` INT(11) NOT NULL AUTO_INCREMENT , `name` VARCHAR(256) NOT NULL , `total` INT(3) NOT NULL , `correct` INT(3) NOT NULL , `incorrect` INT(3) NOT NULL , PRIMARY KEY (`id`) ) ENGINE = InnoDB CHARSET=utf8mb4 COLLATE utf8mb4_general_ci';
+			$this->anyQuery($check_table);
 		} catch (Exception $e) {
 			die($e->getMessage());
 		}
+
 	}
 
-	// public function anyQuery($query='SELECT * FROM results')
-	// {
-	// 	$statement = $this->db->prepare($query);
-	// 	$statement->execute();
-	// 	$result = $statement->fetchAll();
-	// 	return $result;
-	// }
+	private function anyQuery($query='SELECT * FROM results')
+	{
+		$statement = $this->db->prepare($query);
+		$statement->execute();
+		$result = $statement->fetchAll();
+		return $result;
+	}
 
 	public function setResults($arr)
 	{
@@ -48,13 +51,3 @@ class Database {
 $dsn = "mysql:host=$db_host;dbname=$db_name;charset=utf8mb4";
 
 $quizdb = new Database($dsn, $db_user, $db_pass);
-
-//create table results if not exists: 
-/*
-CREATE TABLE `quiz`.`results` ( `id` INT(11) NOT NULL AUTO_INCREMENT , `name` VARCHAR(256) NOT NULL , `total` INT(3) NOT NULL , `correct` INT(3) NOT NULL , `incorrect` INT(3) NOT NULL , PRIMARY KEY (`id`) ENGINE = InnoDB CHARSET=utf8mb4 COLLATE utf8mb4_general_ci;
-*/
-// $query = "SHOW TABLES";
-// $statement = $db->prepare($query);
-// $statement->execute();
-// $result = $statement->fetch();
-// echo $result[0];
