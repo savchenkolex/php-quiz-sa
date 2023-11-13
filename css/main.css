@@ -1,8 +1,9 @@
 :root {
 	--color-violet: #403F85;
 	--color-grey: #E2E2E2;
+	--color-dark-grey: #9A9A9A;
+	--color-black: #090909;
 	--color-blue: #00488B;
-;
 }
 
 @font-face {
@@ -58,7 +59,6 @@ header > .container {
 	padding-bottom: 3px;
 }
 
-
 h1 {
 	margin: 0;
 	font-size: 32px;
@@ -66,4 +66,81 @@ h1 {
 	line-height: 1.22;
 	color: black;
 	align-self: end;
+}
+
+.question-list {
+	font-size: 20px;
+	font-weight: 400;
+	line-height: 1.21;
+
+	padding-left: 20px;
+	margin-top: 44px;
+}
+
+.question-list > li {
+	margin-bottom: 40px;
+}
+
+.radio-btn-list {
+	list-style: none;
+	padding-left: 0;
+	margin-left: -18px;
+}
+
+.radio-btn-list > li {
+	display: block;
+	margin-bottom: 20px;
+	color: var(--color-black);
+}
+
+.btn {
+	background: var(--color-violet);
+	color: white;
+
+	display: block;
+	width: 200px;
+	height: 50px;
+	border-radius: 10px;
+	margin-left: auto;
+	border: 1px solid black;
+}
+
+.result-box {
+	font-size: 20px;
+	line-height: 1.21;
+	font-weight: 300;
+	
+}
+
+.result-table {
+	padding: 10px 28px;
+
+}
+
+.result-table p span {
+	font-weight: 700;
+}
+
+.statistic-table {
+	width: 100%;
+	font-size: 20;
+	line-height: 1.21;
+	font-weight: 400;
+	color: black;
+	text-align: center;
+}
+
+.statistic-table td {
+	background: var(--color-grey);
+	border-right: 12px solid white;
+	border-bottom: 20px solid white;
+	font-weight: 400;
+	height: 80px;
+	min-width: 150px;
+	padding: 0;
+
+}
+
+.statistic-table td:last-child {
+	border-right: none;
 }

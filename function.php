@@ -1,5 +1,4 @@
 <?php 
-require_once 'config.php';
 
 function dd($param){
 	echo "<pre>";
@@ -10,20 +9,25 @@ function dd($param){
 
 $current_url = parse_url($_SERVER["REQUEST_URI"]);
 
-$title;
+function currentTitle ($current_url) {
+	if($current_url["path"] !== "/statistics.php") {
+		return "Тест по PHP";
+	} else {
+		return "Статистика";
+	} 
+}
 
-if($current_url["path"] !== "/statistics.php") {
-	$title = "Тест по PHP";
-} else {
-	$title = "Статистика";
-} 
+function targetNavLink($current_url){
+	$nav = [];
+	if($current_url["path"] !== "/" && $current_url["path"] !== "/index.php" ) {
+		$nav["link"] = "/";
+		$nav["name"] = "Назад";
+	} else {
+		$nav["link"] = "/statistics.php";
+		$nav["name"] = "Статистика";
+	}
+	return $nav;
+}
 
-$nav = [];
+$nav = targetNavLink($current_url);
 
-if($current_url["path"] !== "/" && $current_url["path"] !== "/index.php" ) {
-	$nav["link"] = "/";
-	$nav["name"] = "Назад";
-} else {
-	$nav["link"] = "/statistics.php";
-	$nav["name"] = "Статистика";
-} 
