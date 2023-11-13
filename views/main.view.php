@@ -3,7 +3,13 @@ require_once 'partials/header.php';
 ?>
 <div class="container">
 	<form method="POST" action="/result.php">
-		<input type="text" name="name" required>
+		<input 
+			class="input-name" 
+			type="text" 
+			name="name" 
+			required
+			placeholder="Введіть ваше ім'я" 
+			>
 		<ol class="question-list">
 			<li>
 				<p>Що означає абревіатура PHP?</p>
