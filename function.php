@@ -8,12 +8,12 @@ function dd($param){
 }
 
 $current_url = parse_url($_SERVER["REQUEST_URI"]);
-
+//dd(getcwd());
 function currentTitle ($current_url) {
-	if($current_url["path"] !== "/statistics.php") {
-		return "Тест по PHP";
-	} else {
+	if(str_contains($current_url["path"], "/statistics.php")) {
 		return "Статистика";
+	} else {
+		return "Тест по PHP";
 	} 
 }
 

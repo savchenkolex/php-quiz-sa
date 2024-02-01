@@ -2,7 +2,7 @@
 require_once 'partials/header.php';
 ?>
 <div class="container">
-	<form method="POST" action="/result.php">
+	<form method="POST" action="./result.php">
 		<input 
 			class="input-name" 
 			type="text" 
